@@ -1,0 +1,13 @@
+{% extends 'prod/base.html' %}
+
+{% block content %}
+    {% for zakaz in zakazs %}
+        <div class="zakaz">
+            <div class="date">
+                {{ zakaz.published_date }}
+            </div>
+            <h1><a href="{% url 'zakaz_detail' pk=zakaz.pk %}">{{ zakaz.nom_zak }} {{ zakaz.title }}</a></h1>
+            <p>{{ zakaz.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
