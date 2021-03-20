@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'prod',
+    'prod.apps.ProdConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+LOGIN_REDIRECT_URL = 'zakaz_list'

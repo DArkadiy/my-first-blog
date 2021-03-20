@@ -18,4 +18,8 @@ class Zakaz(models.Model):
 
     def __str__(self):
         return self.title
+        
+    class Meta:
+    	verbose_name = 'Заказ'
+    	verbose_name_plural = 'Заказы'
 

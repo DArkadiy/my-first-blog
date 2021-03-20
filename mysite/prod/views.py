@@ -24,7 +24,7 @@ def zakaz_new(request):
             return redirect('zakaz_detail', pk=zakaz.pk)
     else:
         form = ZakazForm()
-    return render(request, 'prod/zakaz_edit.html', {'form': form})
+    return render(request, 'prod/zakaz_add.html', {'form': form})
 
 def zakaz_edit(request, pk):
     zakaz = get_object_or_404(Zakaz, pk=pk)

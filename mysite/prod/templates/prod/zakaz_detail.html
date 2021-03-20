@@ -11,9 +11,11 @@
             <a class="btn btn-default" href="{% url 'zakaz_edit' pk=zakaz.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
         <h1>{{ zakaz.nom_zak }} {{ zakaz.title }}</h1>
+        <p>{{ zakaz.status }}</p>
         <p>{{ zakaz.text|linebreaksbr }}</p>
         <p>Дата начала {{ zakaz.start_date }}</p>
         <p>Дата окончания {{ zakaz.finish_date }}</p>
+
 
     </div>
 {% endblock %}

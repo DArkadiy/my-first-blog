@@ -1,13 +1,38 @@
 {% extends 'prod/base.html' %}
 
 {% block content %}
+    <table class="table table-bordered table-hover">
+    <thead>
+	<tr>
+		<th>Номер</th> 
+		<th>Клиент</th> 
+		<th>Комментарий</th> 
+		<th>Статус</th> 
+		<th>Дата начала</th> 
+		<th>Дата завершения</th> 
+		<th></th> 
+		<th></th> 
+	</tr>
+	</thead>
+	
     {% for zakaz in zakazs %}
-        <div class="zakaz">
-            <div class="date">
-                {{ zakaz.published_date }}
-            </div>
-            <h1><a href="{% url 'zakaz_detail' pk=zakaz.pk %}">{{ zakaz.nom_zak }} {{ zakaz.title }}</a></h1>
-            <p>{{ zakaz.text|linebreaksbr }}</p>
-        </div>
+    <tbody>
+    <tr>
+        <!--<div class="zakaz">-->
+            <td><a href="{% url 'zakaz_detail' pk=zakaz.pk %}">{{ zakaz.nom_zak }}</a></td>
+            <td><a href="{% url 'zakaz_detail' pk=zakaz.pk %}">{{ zakaz.title }}</a></td>
+            <td>{{ zakaz.text|linebreaksbr }}</td>
+            <td>{{ zakaz.status }}</td> 
+            <td>{{ zakaz.start_date }}</td> 
+            <td>{{ zakaz.finish_date }}</td> 
+            <td></td> 
+            <td></td> 
+        <!--</div>-->
+    </tr>
+    </tbody>
     {% endfor %}
+    
+    	  
+	</table>
+
 {% endblock %}
