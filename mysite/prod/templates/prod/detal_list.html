@@ -1,0 +1,38 @@
+{% extends 'prod/detal_base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+    <thead>
+	<tr>
+		<th> </th> 
+		<th>Название детали</th> 
+		<th>размер</th> 
+		<th>Статус</th> 
+		<th></th> 
+		<th></th> 
+		<th></th> 
+		<th></th> 
+	</tr>
+	</thead>
+	
+    {% for detal in detals %}
+    <tbody>
+    <tr>
+        <!--<div class="zakaz">-->
+            <td> </td>
+            <td><a href="{% url 'detal_detail' pk=detal.pk %}">{{ detal.detal_title }}</a></td>
+            <td>{{ detal.detaltext|linebreaksbr }}</td>
+            <td>{{ detal.detal_status }}</td> 
+            <td> </td> 
+            <td> </td> 
+            <td> </td> 
+            <td> </td> 
+        <!--</div>-->
+    </tr>
+    </tbody>
+    {% endfor %}
+    
+    	  
+	</table>
+
+{% endblock %}

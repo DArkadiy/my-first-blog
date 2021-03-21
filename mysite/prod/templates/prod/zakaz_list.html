@@ -23,8 +23,8 @@
             <td><a href="{% url 'zakaz_detail' pk=zakaz.pk %}">{{ zakaz.title }}</a></td>
             <td>{{ zakaz.text|linebreaksbr }}</td>
             <td>{{ zakaz.status }}</td> 
-            <td>{{ zakaz.start_date }}</td> 
-            <td>{{ zakaz.finish_date }}</td> 
+            <td>{{ zakaz.start_date|date }}</td> 
+            <td>{{ zakaz.finish_date|date }}</td> 
             <td></td> 
             <td></td> 
         <!--</div>-->
